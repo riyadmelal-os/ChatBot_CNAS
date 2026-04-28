@@ -1,0 +1,30 @@
+import numpy as np
+
+# -----------------------------
+# MANUAL PARAMETERS
+# -----------------------------
+def tanh(x):
+    return np.tanh(x)
+
+
+x1 = np.array([[1,0]])
+x2 = np.array([[0,1]])
+# weights (random init)
+Wx  = np.array([[0.5, 0.1],
+                     [0.62, 0.2]])   # input -> hidden
+bx = np.array([[0.4,-0.1]])
+
+
+Wh = np.array([[-0.2, 0.3]]) # hidden -> hidden
+
+bh = np.array([[1.83]])
+
+zh=tanh( x1 @ Wx  +bx)
+
+y=tanh(zh @  Wh +bh)
+
+
+
+
+
+zh2=tanh(x2 @ Wx   +zh @ Wh+ bx)
